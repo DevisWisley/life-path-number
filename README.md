@@ -3,13 +3,13 @@
 This application is a **Life Path Number (Numerologi)** calculator built using **Vue.js + TypeScript + Vite** and modernly designed with **TailwindCSS** and **Bootstrap**.
 
 Users simply enter their date of birth to get:
-- Life Path Number calculation process
-- Number meaning and personality traits
-- Element, planet of influence, lucky color
-- Numerology compatibility 
+> - Life Path Number calculation process
+> - Number meaning and personality traits
+> - Element, planet of influence, lucky color
+> - Numerology compatibility 
 
 🔗 **Live Demo:**  
-https://life-path-number-xi.vercel.app/
+https://life-path-number-beta.vercel.app/
 
 ---
 
@@ -84,7 +84,7 @@ https://life-path-number-xi.vercel.app/
 
 1. 📥 **Clone repositori:**
    ```bash
-   git clone https://github.com/DevisWisley/life-path-number.git.git
+   git clone https://github.com/DevisWisley/life-path-number.git
    ```
 
    - Or download ZIP:
@@ -93,21 +93,24 @@ https://life-path-number-xi.vercel.app/
 
 2. 📂 **Go to the project folder**
    ```bash
-   cd life-path-number.git
+   cd life-path-number
+   ```
 
 3. 📦 **Install dependencies**
    ```bash
    npm install
+   ```
 
 4. 🛠 **Run the project**:
    ```bash
    npm run dev
+   ```
 
 4. 🌐 **Jalankan di server lokal**:
    - Access: http://localhost:5173
 
 5. 🚀 **The App is Ready to Use!**:
-   - Direct access here: [https://life-path-number-xi.vercel.app/](https://life-path-number-xi.vercel.app/)
+   - Direct access here: [https://life-path-number-beta.vercel.app/](https://life-path-number-beta.vercel.app/)
 
 ---
 
@@ -122,6 +125,8 @@ https://life-path-number-xi.vercel.app/
 | 📦 Vite HMR | Hot Module Replacement for super fast development. |
 | 🎨 TailwindCSS JIT | See styling changes instantly during development. |
 | 🧪 Manual UI Testing | Testing calculation functions, UI appearance, and responsiveness. |
+| 🐙 Git | Version control system used to track changes, manage project versions, and collaborate across development workflows. |
+| 🌐 GitHub | Online repository hosting service for storing source code, managing issues, documentation, collaboration, and CI/CD workflows. |
 | ☁️ Vercel Preview Deployment | Every push to GitHub generates an automatic preview URL for testing. |
 
 ---
