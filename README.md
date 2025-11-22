@@ -9,7 +9,7 @@ Users simply enter their date of birth to get:
 - Numerology compatibility 
 
 🔗 **Live Demo:**  
-https://life-path-number-beta.vercel.app/
+https://life-path-number-xi.vercel.app/
 
 ---
 
@@ -107,7 +107,7 @@ https://life-path-number-beta.vercel.app/
    - Access: http://localhost:5173
 
 5. 🚀 **The App is Ready to Use!**:
-   - Direct access here: [https://life-path-number-beta.vercel.app/](https://life-path-number-beta.vercel.app/)
+   - Direct access here: [https://life-path-number-xi.vercel.app/](https://life-path-number-xi.vercel.app/)
 
 ---
 
