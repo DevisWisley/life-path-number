@@ -1,5 +1,6 @@
 <template>
-  <div class="flex items-center justify-center p-4 min-h-screen bg-gradient-to-br from-[#0a1a3f] via-[#143d77] to-[#1c5fbf]">
+  <div
+    class="flex items-center justify-center p-4 min-h-screen bg-gradient-to-br from-[#0a1a3f] via-[#143d77] to-[#1c5fbf]">
     <div class="container max-w-lg">
       <div class="glass shadow-xl p-6 md:p-8 rounded-3xl fade-in">
 
@@ -8,16 +9,9 @@
         </h2>
 
         <label class="form-label text-blue-100 fw-semibold">Pilih Tanggal Lahir:</label>
-        <input
-          type="date"
-          v-model="birthdate"
-          class="form-control mb-3 rounded-lg shadow-sm"
-        />
+        <input type="date" v-model="birthdate" class="form-control mb-3 rounded-lg shadow-sm" />
 
-        <button
-          @click="calculateLifePath"
-          class="w-100 btn btn-primary py-2 rounded-lg btn-custom fw-bold"
-        >
+        <button @click="calculateLifePath" class="w-100 btn btn-primary py-2 rounded-lg btn-custom fw-bold">
           Hitung Sekarang
         </button>
 
@@ -42,6 +36,7 @@
             <p><strong>🔹 Planet Pengaruh:</strong> {{ planets[finalNumber] }}</p>
             <p><strong>🔹 Warna Keberuntungan:</strong> {{ colors[finalNumber] }}</p>
             <p><strong>🔹 Hari Terbaik:</strong> {{ bestDays[finalNumber] }}</p>
+            <p><strong>🔹 Zodiak Numerologi:</strong> {{ zodiacNumerology[finalNumber] }}</p>
 
             <h4 class="text-blue-100 font-bold mt-4">✨ Sifat Positif</h4>
             <p>{{ positiveTraits[finalNumber] }}</p>
@@ -51,9 +46,12 @@
           </div>
 
           <div class="result-box text-white mt-4">
-            <h4 class="text-blue-100 font-bold">💘 Kecocokan</h4>
-            <p><strong>✔ Cocok dengan:</strong> {{ compatibilityList[finalNumber] }}</p>
-            <p><strong>❌ Tidak cocok dengan:</strong> {{ incompatibilityList[finalNumber] }}</p>
+            <h4 class="text-blue-100 font-bold">💘 Kecocokan Anda</h4>
+            <p><strong>✔ Numerologi Kecocokan:</strong> {{ compatibilityList[finalNumber] }}</p>
+            <p><strong>💙 Zodiak Kecocokan:</strong> {{ zodiacCompatibility[finalNumber] }}</p>
+
+            <p><strong>❌ Numerologi Tidak Cocok:</strong> {{ incompatibilityList[finalNumber] }}</p>
+            <p><strong>💔 Zodiak Tidak Cocok:</strong> {{ zodiacIncompatibility[finalNumber] }}</p>
           </div>
         </div>
 
@@ -153,6 +151,18 @@ export default defineComponent({
       9: "Selasa",
     };
 
+    const zodiacNumerology: Record<LifePath, string> = {
+      1: "♈ Aries – Pemimpin kuat dan penuh inisiatif.",
+      2: "♋ Cancer – Sensitif, damai, dan penyayang.",
+      3: "♊ Gemini – Ekspresif, kreatif, dan komunikatif.",
+      4: "♑ Capricorn – Stabil, pekerja keras, dan disiplin.",
+      5: "♐ Sagittarius – Bebas, petualang, dan berubah cepat.",
+      6: "♎ Libra – Harmonis, penuh cinta, penyembuh.",
+      7: "♓ Pisces – Spiritual, intuitif, dan mendalam.",
+      8: "♌ Leo – Kuat, ambisius, dan penuh cahaya.",
+      9: "♒ Aquarius – Visioner, humanis, dan peduli sesama.",
+    };
+
     const positiveTraits: Record<LifePath, string> = {
       1: "Mandiri, percaya diri, inovatif, kompetitif, motivator kuat.",
       2: "Empati tinggi, diplomatis, penyayang, penengah konflik, setia.",
@@ -199,6 +209,30 @@ export default defineComponent({
       7: "2 (The Peacemaker), 4 (The Builder), 8 (The Powerhouse)",
       8: "1 (The Leader), 3 (The Creator), 5 (The Adventurer)",
       9: "1 (The Leader), 4 (The Builder), 7 (The Thinker)",
+    };
+
+    const zodiacCompatibility: Record<LifePath, string> = {
+      1: "Aries, Leo, Sagittarius",
+      2: "Cancer, Pisces, Scorpio",
+      3: "Gemini, Libra, Aquarius",
+      4: "Taurus, Virgo, Capricorn",
+      5: "Sagittarius, Aries, Aquarius",
+      6: "Libra, Taurus, Cancer",
+      7: "Pisces, Cancer, Scorpio",
+      8: "Leo, Aries, Capricorn",
+      9: "Aquarius, Libra, Sagittarius",
+    };
+
+    const zodiacIncompatibility: Record<LifePath, string> = {
+      1: "Cancer, Capricorn",
+      2: "Aries, Leo",
+      3: "Scorpio, Taurus",
+      4: "Gemini, Sagittarius",
+      5: "Virgo, Taurus",
+      6: "Aries, Scorpio",
+      7: "Leo, Aries",
+      8: "Cancer, Pisces",
+      9: "Capricorn, Virgo",
     };
 
     const reduceSteps = (num: number) => {
@@ -250,10 +284,13 @@ export default defineComponent({
       planets,
       colors,
       bestDays,
+      zodiacNumerology,
       positiveTraits,
       negativeTraits,
       compatibilityList,
       incompatibilityList,
+      zodiacCompatibility,
+      zodiacIncompatibility,
       calculateLifePath,
     };
   },
@@ -289,6 +326,7 @@ body {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
