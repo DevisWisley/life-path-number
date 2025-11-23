@@ -36,7 +36,6 @@
             <p><strong>🔹 Planet Pengaruh:</strong> {{ planets[finalNumber] }}</p>
             <p><strong>🔹 Warna Keberuntungan:</strong> {{ colors[finalNumber] }}</p>
             <p><strong>🔹 Hari Terbaik:</strong> {{ bestDays[finalNumber] }}</p>
-            <p><strong>🔹 Zodiak Numerologi:</strong> {{ zodiacNumerology[finalNumber] }}</p>
 
             <h4 class="text-blue-100 font-bold mt-4">✨ Sifat Positif</h4>
             <p>{{ positiveTraits[finalNumber] }}</p>
@@ -80,27 +79,27 @@ export default defineComponent({
     const finalNumber = ref<LifePath | null>(null);
 
     const titles: Record<LifePath, string> = {
-      1: "The Leader",
-      2: "The Peacemaker",
-      3: "The Creator",
-      4: "The Builder",
-      5: "The Adventurer",
-      6: "The Nurturer",
-      7: "The Thinker",
-      8: "The Powerhouse",
-      9: "The Humanitarian",
+      1: "👑 The Leader",
+      2: "🤝 The Peacemaker",
+      3: "🎨 The Creator",
+      4: "🏗️ The Builder",
+      5: "🏞️ The Adventurer",
+      6: "💖 The Nurturer",
+      7: "🔍 The Thinker",
+      8: "💼 The Powerhouse",
+      9: "🌱 The Humanitarian",
     };
 
     const meanings: Record<LifePath, string> = {
-      1: "Pemimpin alami, mandiri, ambisius, dan penuh inovasi.",
-      2: "Diplomatis, sensitif, lembut, penyayang, ahli bekerja sama.",
-      3: "Kreatif, ceria, komunikatif, penuh ide segar.",
-      4: "Disiplin, stabil, pekerja keras, berorientasi sistem.",
-      5: "Bebas, fleksibel, petualang, menyukai perubahan.",
-      6: "Penyayang, peduli, harmonis, pelindung keluarga.",
-      7: "Analitis, spiritual, pemikir mendalam, mencari kebenaran.",
-      8: "Ambisius, kuat secara finansial, pemimpin kuat.",
-      9: "Dermawan, humanis, punya empati besar pada dunia.",
+      1: "👑 Pemimpin alami, 💪 mandiri, 🚀 ambisius, dan ✨ penuh inovasi.",
+      2: "🕊️ Diplomatis, 😌 sensitif, 🌸 lembut, 💖 penyayang, 🤝 ahli bekerja sama.",
+      3: "🎨 Kreatif, 😄 ceria, 💬 komunikatif, 💡 penuh ide segar.",
+      4: "📏 Disiplin, 🏢 stabil, 🛠️ pekerja keras, 📚 berorientasi sistem.",
+      5: "🌈 Bebas, 🎒 fleksibel, 🏞️ petualang, ✈️ menyukai perubahan.",
+      6: "💞 Penyayang, 🕊️ peduli, 🏡 harmonis, 👨‍👩‍👧‍👦 pelindung keluarga.",
+      7: "🔍 Analitis, 🧘‍♂️ spiritual, 📖 pemikir mendalam, 🌌 mencari kebenaran.",
+      8: "💼 Ambisius, 💰 kuat secara finansial, 👑 pemimpin kuat.",
+      9: "🤲 Dermawan, 💖 humanis, 🌈 punya empati besar pada dunia.",
     };
 
     const elements: Record<LifePath, string> = {
@@ -116,27 +115,27 @@ export default defineComponent({
     };
 
     const planets: Record<LifePath, string> = {
-      1: "☀ Sun",
+      1: "☀️ Sun",
       2: "🌙 Moon",
-      3: "🌟 Jupiter",
+      3: "🟡 Jupiter",
       4: "🪐 Saturn",
-      5: "☿ Mercury",
-      6: "🌍 Venus",
-      7: "🔭 Neptune",
-      8: "♄ Saturn",
-      9: "♂ Mars",
+      5: "🌕 Mercury",
+      6: "🟠 Venus",
+      7: "🌍 Neptune",
+      8: "🌑 Uranus",
+      9: "🔴 Mars",
     };
 
     const colors: Record<LifePath, string> = {
-      1: "Merah, Emas",
-      2: "Putih, Silver",
-      3: "Kuning, Orange",
-      4: "Hijau, Coklat",
-      5: "Biru Muda, Cyan",
-      6: "Pink, Hijau Pastel",
-      7: "Biru Tua, Indigo",
-      8: "Hitam, Ungu",
-      9: "Merah Tua, Biru Navy",
+      1: "🟥 Merah, 🟨 Emas",
+      2: "⬜ Putih, ◻️ Silver",
+      3: "🟨 Kuning, 🟧 Orange",
+      4: "🟩 Hijau, 🟫 Coklat",
+      5: "🟦 Biru Muda, 🟦 Cyan",
+      6: "🟥 Pink, 🟩 Hijau Pastel",
+      7: "🟦 Biru Tua, 🟪 Indigo",
+      8: "⬛ Hitam, 🟪 Ungu",
+      9: "🟥 Merah Tua, 🟦 Biru Navy",
     };
 
     const bestDays: Record<LifePath, string> = {
@@ -151,88 +150,76 @@ export default defineComponent({
       9: "Selasa",
     };
 
-    const zodiacNumerology: Record<LifePath, string> = {
-      1: "♈ Aries – Pemimpin kuat dan penuh inisiatif.",
-      2: "♋ Cancer – Sensitif, damai, dan penyayang.",
-      3: "♊ Gemini – Ekspresif, kreatif, dan komunikatif.",
-      4: "♑ Capricorn – Stabil, pekerja keras, dan disiplin.",
-      5: "♐ Sagittarius – Bebas, petualang, dan berubah cepat.",
-      6: "♎ Libra – Harmonis, penuh cinta, penyembuh.",
-      7: "♓ Pisces – Spiritual, intuitif, dan mendalam.",
-      8: "♌ Leo – Kuat, ambisius, dan penuh cahaya.",
-      9: "♒ Aquarius – Visioner, humanis, dan peduli sesama.",
-    };
-
     const positiveTraits: Record<LifePath, string> = {
-      1: "Mandiri, percaya diri, inovatif, kompetitif, motivator kuat.",
-      2: "Empati tinggi, diplomatis, penyayang, penengah konflik, setia.",
-      3: "Kreatif, humoris, ekspresif, optimis, mudah bergaul.",
-      4: "Stabil, disiplin, detail-oriented, pekerja keras, dapat dipercaya.",
-      5: "Berani, fleksibel, petualang, cepat beradaptasi, energik.",
-      6: "Peduli, penuh kasih, harmonis, bertanggung jawab, protektif.",
-      7: "Bijaksana, analitis, intuitif, logis, filosofis.",
-      8: "Ambisius, berbakat bisnis, tegas, organisator hebat, visioner.",
-      9: "Dermawan, humanis, idealis, penuh empati, inspiratif.",
+      1: "💪 Mandiri, 😎 percaya diri, 💡 inovatif, 🏆 kompetitif, 📣 motivator kuat.",
+      2: "🤝 Empati tinggi, 🕊️ diplomatis, ❤️ penyayang, ⚖️ penengah konflik, 🤗 setia.",
+      3: "🎨 Kreatif, 😄 humoris, 🗣️ ekspresif, 🌈 optimis, 🥳 mudah bergaul.",
+      4: "🏛️ Stabil, 📏 disiplin, 🔍 detail-oriented, 💼 pekerja keras, 🤝 dapat dipercaya.",
+      5: "🦁 Berani, 🤸 fleksibel, 🏞️ petualang, 🌪️ cepat beradaptasi, ⚡ energik.",
+      6: "🫂 Peduli, 💖 penuh kasih, 🎶 harmonis, 📌 bertanggung jawab, 🛡️ protektif.",
+      7: "🧠 Bijaksana, 📊 analitis, 🔮 intuitif, 🧩 logis, 📚 filosofis.",
+      8: "🚀 Ambisius, 💼 berbakat bisnis, 💪 tegas, 📅 organisator hebat, 👁️ visioner.",
+      9: "🎁 Dermawan, 🌍 humanis, ✨ idealis, 🤗 penuh empati, 🌟 inspiratif.",
     };
 
     const negativeTraits: Record<LifePath, string> = {
-      1: "Keras kepala, individualis, terlalu dominan, cepat marah.",
-      2: "Terlalu sensitif, mudah cemas, bergantung pada orang lain.",
-      3: "Moody, tidak fokus, boros, terlalu dramatis.",
-      4: "Kaku, perfeksionis, kurang fleksibel, keras hati.",
-      5: "Tidak konsisten, impulsif, mudah bosan, sulit komitmen.",
-      6: "Terlalu protektif, suka mengatur, mudah tersinggung.",
-      7: "Terlalu tertutup, overthinking, sulit percaya orang lain.",
-      8: "Terlalu ambisius, materialistis, keras, dominan.",
-      9: "Terlalu emosional, mudah dimanfaatkan, terlalu idealis.",
+      1: "🤯 Keras kepala, 🧍 individualis, 👑 terlalu dominan, 😡 cepat marah.",
+      2: "😢 Terlalu sensitif, 😰 mudah cemas, 🤝 bergantung pada orang lain.",
+      3: "🌧️ Moody, 🎯 tidak fokus, 🛍️ boros, 😩 terlalu dramatis.",
+      4: "🪵 Kaku, 📝 perfeksionis, 🤷 kurang fleksibel, 💔 keras hati.",
+      5: "🔄 Tidak konsisten, 🔥 impulsif, 😐 mudah bosan, 🚫 sulit komitmen.",
+      6: "🛡️ Terlalu protektif, 📋 suka mengatur, 😤 mudah tersinggung.",
+      7: "🤐 Terlalu tertutup, 🌀 overthinking, 🙅‍♂️ sulit percaya orang lain.",
+      8: "🏆 Terlalu ambisius, 💎 materialistis, 🪨 keras, 👑 dominan.",
+      9: "😭 Terlalu emosional, 🥺 mudah dimanfaatkan, ✨ terlalu idealis.",
     };
 
     const compatibilityList: Record<LifePath, string> = {
-      1: "3 (The Creator), 5 (The Adventurer), 7 (The Thinker)",
-      2: "6 (The Nurturer), 8 (The Powerhouse), 9 (The Humanitarian)",
-      3: "1 (The Leader), 5 (The Adventurer), 7 (The Thinker)",
-      4: "2 (The Peacemaker), 6 (The Nurturer), 8 (The Powerhouse)",
-      5: "1 (The Leader), 3 (The Creator), 7 (The Thinker)",
-      6: "2 (The Peacemaker), 4 (The Builder), 9 (The Humanitarian)",
-      7: "1 (The Leader), 3 (The Creator), 5 (The Adventurer)",
-      8: "2 (The Peacemaker), 4 (The Builder), 6 (The Nurturer)",
-      9: "2 (The Peacemaker), 6 (The Nurturer), 8 (The Powerhouse)",
+      1: "🎨 The Creator, 🏞️ The Adventurer, 🔍 The Thinker",
+      2: "💖 The Nurturer, 💼 The Powerhouse, 🌱 The Humanitarian",
+      3: "👑 The Leader, 🏞️ The Adventurer, 🔍 The Thinker",
+      4: "🤝 The Peacemaker, 💖 The Nurturer, 💼 The Powerhouse",
+      5: "👑 The Leader, 🎨 The Creator, 🔍 The Thinker",
+      6: "🤝 The Peacemaker, 🏗️ The Builder, 🌱 The Humanitarian",
+      7: "👑 The Leader, 🎨 The Creator, 🏞️ The Adventurer",
+      8: "🤝 The Peacemaker, 🏗️ The Builder, 💖 The Nurturer",
+      9: "🤝 The Peacemaker, 💖 The Nurturer, 💼 The Powerhouse",
     };
 
     const incompatibilityList: Record<LifePath, string> = {
-      1: "2 (The Peacemaker), 4 (The Builder), 8 (The Powerhouse)",
-      2: "1 (The Leader), 5 (The Adventurer), 7 (The Thinker)",
-      3: "4 (The Builder), 6 (The Nurturer), 8 (The Powerhouse)",
-      4: "3 (The Creator), 5 (The Adventurer), 9 (The Humanitarian)",
-      5: "2 (The Peacemaker), 4 (The Builder), 6 (The Nurturer)",
-      6: "1 (The Leader), 5 (The Adventurer), 7 (The Thinker)",
-      7: "2 (The Peacemaker), 4 (The Builder), 8 (The Powerhouse)",
-      8: "1 (The Leader), 3 (The Creator), 5 (The Adventurer)",
-      9: "1 (The Leader), 4 (The Builder), 7 (The Thinker)",
+      1: "🤝 The Peacemaker, 🏗️ The Builder, 💼 The Powerhouse",
+      2: "👑 The Leader, 🏞️ The Adventurer, 🔍 The Thinker",
+      3: "🏗️ The Builder, 💖 The Nurturer, 💼 The Powerhouse",
+      4: "🎨 The Creator, 🏞️ The Adventurer, 🌱 The Humanitarian",
+      5: "🤝 The Peacemaker, 🏗️ The Builder, 💖 The Nurturer",
+      6: "👑 The Leader, 🏞️ The Adventurer, 🔍 The Thinker",
+      7: "🤝 The Peacemaker, 🏗️ The Builder, 💼 The Powerhouse",
+      8: "👑 The Leader, 🎨 The Creator, 🏞️ The Adventurer",
+      9: "👑 The Leader, 🏗️ The Builder, 🔍 The Thinker",
     };
 
     const zodiacCompatibility: Record<LifePath, string> = {
-      1: "Aries, Leo, Sagittarius",
-      2: "Cancer, Pisces, Scorpio",
-      3: "Gemini, Libra, Aquarius",
-      4: "Taurus, Virgo, Capricorn",
-      5: "Sagittarius, Aries, Aquarius",
-      6: "Libra, Taurus, Cancer",
-      7: "Pisces, Cancer, Scorpio",
-      8: "Leo, Aries, Capricorn",
-      9: "Aquarius, Libra, Sagittarius",
+      1: "♈ Aries, ♌ Leo, ♐ Sagittarius",
+      2: "♋ Cancer, ♓ Pisces, ♉ Taurus",
+      3: "♊ Gemini, ♎ Libra, ♈ Aries",
+      4: "♑ Capricorn, ♍ Virgo, ♉ Taurus",
+      5: "♐ Sagittarius, ♊ Gemini, ♈ Aries",
+      6: "♎ Libra, ♉ Taurus, ♋ Cancer",
+      7: "♓ Pisces, ♏ Scorpio, ♋ Cancer",
+      8: "♌ Leo, ♈ Aries, ♑ Capricorn",
+      9: "♒ Aquarius, ♌ Leo, ♐ Sagittarius",
     };
 
     const zodiacIncompatibility: Record<LifePath, string> = {
-      1: "Cancer, Capricorn",
-      2: "Aries, Leo",
-      3: "Scorpio, Taurus",
-      4: "Gemini, Sagittarius",
-      5: "Virgo, Taurus",
-      6: "Aries, Scorpio",
-      7: "Leo, Aries",
-      8: "Cancer, Pisces",
-      9: "Capricorn, Virgo",
+      1: "♋ Cancer, ♑ Capricorn, ♍ Virgo",
+      2: "♈ Aries, ♌ Leo, ♏ Scorpio",
+      3: "♏ Scorpio, ♑ Capricorn, ♉ Taurus",
+      4: "♊ Gemini, ♎ Libra, ♐ Sagittarius",
+      5: "♋ Cancer, ♍ Virgo, ♑ Capricorn",
+      6: "♈ Aries, ♏ Scorpio, ♐ Sagittarius",
+      7: "♌ Leo, ♉ Taurus, ♈ Aries",
+      8: "♓ Pisces, ♋ Cancer, ♎ Libra",
+      9: "♍ Virgo, ♑ Capricorn, ♏ Scorpio",
     };
 
     const reduceSteps = (num: number) => {
@@ -284,7 +271,6 @@ export default defineComponent({
       planets,
       colors,
       bestDays,
-      zodiacNumerology,
       positiveTraits,
       negativeTraits,
       compatibilityList,
