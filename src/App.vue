@@ -23,35 +23,34 @@
           <h4 class="font-bold text-blue-100">🔢 Proses Perhitungan:</h4>
           <p class="text-blue-100"><strong>{{ calculationSteps[0] }}</strong></p>
           <p v-for="(step, idx) in calculationSteps.slice(1)" :key="idx" class="text-blue-100">{{ step }}</p>
+          <div v-if="finalNumber" class="fade-in mt-3">
+            <p class="text-2xl font-bold text-blue-200">✨ Life Path Number Anda: {{ finalNumber }}</p>
+            <p class="text-blue-200 text-lg">{{ titles[finalNumber] }}</p>
+            <p class="mt-2 text-blue-200">{{ meanings[finalNumber] }}</p>
+          </div>
         </div>
 
-        <div v-if="finalNumber" class="mt-4 text-center fade-in">
-          <p class="text-2xl font-bold text-blue-200">✨ Life Path Number Anda: {{ finalNumber }}</p>
-          <p class="text-blue-200 text-lg">{{ titles[finalNumber] }}</p>
-          <p class="mt-2 text-blue-200">{{ meanings[finalNumber] }}</p>
+        <div v-if="finalNumber" class="result-box text-left text-white mt-4">
+          <h4 class="text-blue-100 font-bold mb-2">🌟 Informasi Lengkap</h4>
+          <p><strong>🔹 Elemen:</strong> {{ elements[finalNumber] }}</p>
+          <p><strong>🔹 Planet Pengaruh:</strong> {{ planets[finalNumber] }}</p>
+          <p><strong>🔹 Warna Keberuntungan:</strong> {{ colors[finalNumber] }}</p>
+          <p><strong>🔹 Hari Terbaik:</strong> {{ bestDays[finalNumber] }}</p>
 
-          <div class="result-box text-left text-white mt-4">
-            <h4 class="text-blue-100 font-bold mb-2">🌟 Informasi Lengkap</h4>
-            <p><strong>🔹 Elemen:</strong> {{ elements[finalNumber] }}</p>
-            <p><strong>🔹 Planet Pengaruh:</strong> {{ planets[finalNumber] }}</p>
-            <p><strong>🔹 Warna Keberuntungan:</strong> {{ colors[finalNumber] }}</p>
-            <p><strong>🔹 Hari Terbaik:</strong> {{ bestDays[finalNumber] }}</p>
+          <h4 class="text-blue-100 font-bold mt-4">✨ Sifat Positif</h4>
+          <p>{{ positiveTraits[finalNumber] }}</p>
 
-            <h4 class="text-blue-100 font-bold mt-4">✨ Sifat Positif</h4>
-            <p>{{ positiveTraits[finalNumber] }}</p>
+          <h4 class="text-blue-100 font-bold mt-4">⚠ Sifat Negatif</h4>
+          <p>{{ negativeTraits[finalNumber] }}</p>
+        </div>
 
-            <h4 class="text-blue-100 font-bold mt-4">⚠ Sifat Negatif</h4>
-            <p>{{ negativeTraits[finalNumber] }}</p>
-          </div>
+        <div v-if="finalNumber" class="result-box text-white mt-4">
+          <h4 class="text-blue-100 font-bold">💘 Kecocokan Anda</h4>
+          <p><strong>✔ Numerologi Kecocokan:</strong> {{ compatibilityList[finalNumber] }}</p>
+          <p><strong>💙 Zodiak Kecocokan:</strong> {{ zodiacCompatibility[finalNumber] }}</p>
 
-          <div class="result-box text-white mt-4">
-            <h4 class="text-blue-100 font-bold">💘 Kecocokan Anda</h4>
-            <p><strong>✔ Numerologi Kecocokan:</strong> {{ compatibilityList[finalNumber] }}</p>
-            <p><strong>💙 Zodiak Kecocokan:</strong> {{ zodiacCompatibility[finalNumber] }}</p>
-
-            <p><strong>❌ Numerologi Tidak Cocok:</strong> {{ incompatibilityList[finalNumber] }}</p>
-            <p><strong>💔 Zodiak Tidak Cocok:</strong> {{ zodiacIncompatibility[finalNumber] }}</p>
-          </div>
+          <p><strong>❌ Numerologi Tidak Cocok:</strong> {{ incompatibilityList[finalNumber] }}</p>
+          <p><strong>💔 Zodiak Tidak Cocok:</strong> {{ zodiacIncompatibility[finalNumber] }}</p>
         </div>
 
       </div>
