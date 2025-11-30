@@ -104,10 +104,10 @@ export default defineComponent({
     const elements: Record<LifePath, string> = {
       1: "🔥 Fire",
       2: "💧 Water",
-      3: "🔥 Fire",
-      4: "🌍 Earth",
+      3: "💨 Air",
+      4: "🌱 Earth",
       5: "💨 Air",
-      6: "🌍 Earth",
+      6: "🌱 Earth",
       7: "💧 Water",
       8: "🔥 Fire",
       9: "💨 Air",
